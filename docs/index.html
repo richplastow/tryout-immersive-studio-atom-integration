@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tryout Immersive Studio Atom Integration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #00ff00;
+        }
+        h1 {
+            padding: 1rem;
+            color: #fff;
+            background-color: #000080;
+            border-radius: 0.4rem;
+        }
+        #animating-thing {
+            width: 25rem;
+            height: 25rem;
+            background-color: #ff0000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: move 2s infinite alternate;
+            border-radius: 1rem;
+            outline: 1rem solid #000080;
+        }
+        @keyframes move {
+            0% { transform: translate(-50%, -50%) translateX(-200px); }
+            100% { transform: translate(-50%, -50%) translateX(200px); }
+        }
+        #button-menu {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000080;
+            padding: 1rem;
+            border-radius: 0.4rem;
+            font-size: 2rem;
+        }
+        #button-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tryout Immersive Studio Atom Integration</h1>
+    <div id="animating-thing"></div>
+    <div id="button-menu">
+      <a href="#ff0000">Red</a> |
+      <a href="#00ff00">Green</a> |
+      <a href="#0000ff">Blue</a> |
+      <a href="#ff00ff">Magenta</a>
+    </div>
+    <script>
+        var animatingThing = document.getElementById('animating-thing');
+        var currentColor = '#ff0000';
+        setInterval(function() {
+            var fragment = location.hash.trim();
+            fragment = !fragment ? '#ff0000' : fragment;
+            if (fragment !== currentColor) {
+                currentColor = fragment;
+                animatingThing.style.backgroundColor = currentColor;
+            }
+        }, 500);
+    </script>
+</body>
+</html>
