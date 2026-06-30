@@ -10,25 +10,26 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #00ff00;
+            /* background-color: #00ff00; */
         }
         h1 {
             padding: 1rem;
             color: #fff;
             background-color: #000080;
-            border-radius: 0.4rem;
+            border-radius: 0.4vmax;
+            font-size: 2vmax;
         }
         #animating-thing {
-            width: 25rem;
-            height: 25rem;
+            width: 25vmax;
+            height: 25vmax;
             background-color: #ff0000;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             animation: move 2s infinite alternate;
-            border-radius: 1rem;
-            outline: 1rem solid #000080;
+            border-radius: 1vmax;
+            outline: 1vmax solid #000080;
         }
         @keyframes move {
             0% { transform: translate(-50%, -50%) translateX(-200px); }
@@ -40,14 +41,14 @@
             left: 50%;
             transform: translateX(-50%);
             background-color: #000080;
-            padding: 1rem;
-            border-radius: 0.4rem;
-            font-size: 2rem;
+            padding: 1vmax;
+            border-radius: 0.4vmax;
+            font-size: 2vmax;
         }
         #button-menu a {
             color: #ffffff;
             text-decoration: none;
-            padding: 1rem;
+            padding: 1vmax;
         }
     </style>
 </head>
